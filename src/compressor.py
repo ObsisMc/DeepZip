@@ -21,7 +21,7 @@ import keras
 from keras.models import Sequential
 from keras.models import model_from_json
 from keras.models import load_model
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 import tensorflow as tf
 import numpy as np
 import argparse
@@ -126,7 +126,7 @@ def var_int_encode(byte_str_len, f):
 def main():
         args.temp_dir = tempfile.mkdtemp()
         args.temp_file_prefix = args.temp_dir + "/compressed"
-        tf.set_random_seed(42)
+        tf.random.set_seed(42)
         np.random.seed(0)
         series = np.load(args.sequence_npy_file)
         series = series.reshape(-1, 1)

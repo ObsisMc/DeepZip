@@ -9,7 +9,7 @@ from keras.callbacks import ModelCheckpoint
 # from matplotlib import pyplot
 import keras
 from sklearn.preprocessing import OneHotEncoder
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 from keras.layers.advanced_activations import ELU
 import tensorflow as tf
 import numpy as np

@@ -21,7 +21,7 @@ import keras
 from keras.models import model_from_json
 from keras.layers import Dense
 from keras.models import load_model
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 import tensorflow as tf
 import numpy as np
 import argparse
@@ -137,7 +137,7 @@ def var_int_decode(f):
 def main():
         args.temp_dir = tempfile.mkdtemp()
         args.temp_file_prefix = args.temp_dir + "/compressed"
-        tf.set_random_seed(42)
+        tf.random.set_seed(42)
         np.random.seed(0)
         f = open(args.input_file_prefix+'.params','r')
         param_dict = json.loads(f.read())
